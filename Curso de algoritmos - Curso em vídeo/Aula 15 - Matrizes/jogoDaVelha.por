@@ -13,7 +13,6 @@ programa
 		jogar()
 	}
 
-
 	funcao preencheMatriz(){
 		inteiro l, c, cont=0
 		para(l=0; l<=2; l++){
@@ -42,63 +41,78 @@ programa
 	}
 
 	funcao jogar(){
-		inteiro op, l, vez=0, a
+		inteiro op, l, vez=1, a
 		vencedor=falso
 		x='X'
+
 		faca{
 			escreva("\nDigite um número para ", x, ": ")
-			leia (op)
-				se((op>0) e (op<10)){
-					//
-					se((op>0)e(op<4)){
-						l=0
-						se((jogo[l][op-1]=='X') ou (jogo[l][op-1]=='O')){
-							escreva("Este valor já está preenchido")
-						}
-						senao{
-							jogo[l][op-1]=x
-							alternar()
-							vez=vez++
-						}
+			leia(op)
+
+			se((op>0) e (op<10)){
+				se((op>0) e (op<4)){
+					l=0
+					se((jogo[l][op-1]=='X') ou (jogo[l][op-1]=='O')){
+						escreva("Este lugar já etá preenchido")
 					}
-					//
-					senao se((op>3)e(op<7)){
-						l=1
-						se((jogo[l][op-4]=='X') ou (jogo[l][op-4]=='O')){
-							escreva("Este valor já está preenchido")
-						}
-						senao{
-							jogo[l][op-4]=x
-							alternar()
-							vez=vez++
-						}
-					}
-					//
 					senao{
-						l=2
-						se((jogo[l][op-7]=='X') ou (jogo[l][op-7]=='O')){
-							escreva("Este valor já está preenchido")
-						}
-						senao{
-							jogo[l][op-7]=x
-							alternar()
-							vez=vez++
+						jogo[l][op-1]=x
+						vencedor=verificaVencedor()
+						vez=vez++
+						se(vencedor==falso){
+							alternar()	
 						}
 					}
 				}
-				senao{
-					escreva("Opção inválida")
-					escreva("\nAperte 0 para continuar")
-					leia(a)
+				//fim linha 1
+				senao se((op>3) e (op<7)){
+					l=1
+					se((jogo[l][op-4]=='X') ou (jogo[l][op-4]=='O')){
+						escreva("Este lugar já etá preenchido")
+					}
+					senao{
+						jogo[l][op-4]=x
+						vencedor=verificaVencedor()
+						vez=vez++
+						se(vencedor==falso){
+							alternar()	
+						}
+					}
 				}
-		}enquanto((vencedor==falso) ou (vez<=9))
-		
+				//fim linha 2
+				senao{
+					l=2
+					se((jogo[l][op-7]=='X') ou (jogo[l][op-7]=='O')){
+						escreva("Este lugar já está preenchido")
+					}
+					senao{
+						jogo[l][op-7]=x
+						vencedor=verificaVencedor()
+						vez=vez++
+						se(vencedor==falso){
+							alternar()
+						}
+					}
+				}
+				//fim linha 3
+			} //fim verifica op de 1-10
+			senao{
+				escreva("Opção inválida\n")
+				escreva("Aperte 0 para continuar")
+				leia(a)
+			}
+			limpa()
+			mostraVelha()
+			
+		}enquanto((vez<10) e (vencedor==falso))
+
 		se(vencedor==verdadeiro){
-			escreva("\nO vencedor ", x, " venceu\n")
+			escreva("\nO jogador ", x, " venceu\n")
 		}
-		se(vez==9){
-			escreva("\nDeu velha")
+		senao{
+			escreva("\nDeu velha\n")
 		}
+		
 	}
 
 	funcao alternar(){
@@ -116,24 +130,24 @@ programa
 
 	funcao logico verificaVencedor(){
 		inteiro i
-		logico tem=falso
+		logico venceu=falso
 		para (i=0; i<=2; i++){
 			se((jogo[i][0]==jogo[i][1]) e (jogo[i][1]==jogo[i][2])){
-				tem=verdadeiro
+				venceu=verdadeiro
 			}
 		}
 		para (i=0; i<=2; i++){
 			se((jogo[0][i]==jogo[1][i]) e (jogo[1][i]==jogo[2][i])){
-				tem=verdadeiro
+				venceu=verdadeiro
 			}
 		}
 		se((jogo[0][0]==jogo[1][1]) e (jogo[1][1]==jogo[2][2])){
-				tem=verdadeiro
+				venceu=verdadeiro
 			}
 		se((jogo[0][2]==jogo[1][1]) e (jogo[1][1]==jogo[2][0])){
-				tem=verdadeiro
+				venceu=verdadeiro
 			}
-		retorne tem
+		retorne venceu
 	}
 }
 /* $$$ Portugol Studio $$$ 
@@ -141,9 +155,9 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 757; 
+ * @POSICAO-CURSOR = 1941; 
  * @PONTOS-DE-PARADA = ;
- * @SIMBOLOS-INSPECIONADOS = {vez, 45, 17, 3};
+ * @SIMBOLOS-INSPECIONADOS = {vencedor, 5, 8, 8}-{vez, 44, 17, 3};
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
  * @FILTRO-ARVORE-TIPOS-DE-SIMBOLO = variavel, vetor, matriz, funcao;
  */
