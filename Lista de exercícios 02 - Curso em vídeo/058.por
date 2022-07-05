@@ -1,12 +1,12 @@
 programa
 {
-	inclua biblioteca Tipos --> tipos
+	inclua biblioteca Tipos --> tipos
 	funcao inicio()
 	{
-		inteiro idade, contador=0, somaIdade=0
+		inteiro idade=0, contador=0, somaIdade=0
 		real media=0.0
 
-		faca{
+		enquanto(idade!=999){
 			escreva("Digite sua idade: ")
 			leia(idade)
 
@@ -16,10 +16,10 @@ programa
 				media=tipos.inteiro_para_real(somaIdade)/contador
 			}
 				
-		}enquanto(idade!=999)
+		}
 		
 			escreva("A quantidade de estudantes foi: ", contador)
-			escreva("A média de idade entre eles é de : ", media)
+			escreva("\NA média de idade entre eles é de : ", media)
 	}
 }
 /* $$$ Portugol Studio $$$ 
@@ -27,7 +27,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 128; 
+ * @POSICAO-CURSOR = 406; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;

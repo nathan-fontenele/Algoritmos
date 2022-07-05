@@ -1,13 +1,13 @@
 programa
 {
-	inclua biblioteca Tipos --> tipos
+	inclua biblioteca Tipos --> tipos
 	funcao inicio()
 	{
-		caracter sexo, continua
+		caracter sexo, continua='S'
 		inteiro idade, contHomens=0, menorIdadeM=0, maiorIdade=0, somaIdade=0
 		real mediaIdade=0.0
 
-		faca{
+		enquanto(continua!='N'){
 			escreva("Digite seu sexo [M/F]: ")
 			leia(sexo)
 
@@ -34,7 +34,7 @@ programa
 				}
 			}
 			
-		}enquanto(continua!='N')
+		}
 
 		escreva("A maior idade foi de: ", maiorIdade)
 		escreva("\nForam cadastrados ", contHomens, " homens")
@@ -47,7 +47,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 127; 
+ * @POSICAO-CURSOR = 95; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
