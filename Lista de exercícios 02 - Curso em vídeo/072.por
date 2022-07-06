@@ -1,0 +1,24 @@
+programa
+{
+	
+	funcao inicio()
+	{
+		inteiro vetor[10], c
+
+		para(c=0; c<=9; c++){
+			vetor[c]=(c+1)*5
+			escreva(vetor[c], ' ')
+		}
+	}
+}
+/* $$$ Portugol Studio $$$ 
+ * 
+ * Esta seção do arquivo guarda informações do Portugol Studio.
+ * Você pode apagá-la se estiver utilizando outro editor.
+ * 
+ * @POSICAO-CURSOR = 130; 
+ * @PONTOS-DE-PARADA = ;
+ * @SIMBOLOS-INSPECIONADOS = ;
+ * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
+ * @FILTRO-ARVORE-TIPOS-DE-SIMBOLO = variavel, vetor, matriz, funcao;
+ */
