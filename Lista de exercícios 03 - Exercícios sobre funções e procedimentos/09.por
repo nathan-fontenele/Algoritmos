@@ -2,37 +2,26 @@ programa
 {
 	
 	funcao inicio()
-	{	
-		inteiro num
-		logico result
-		escreva("Digite um valor: ")
-		leia(num)
-		primo(num)
-		
-		result=primo(num)
-		
-		escreva(result)
+	{
+		verificaPositivo()
 	}
 
-	funcao logico primo (inteiro a){
-		logico conferePrimo=falso
-		inteiro contDiv=0, cont=1
+	funcao logico verificaPositivo(){
+		inteiro num
+		logico positivo
+		escreva("Digite um valor: ")
+		leia(num)
 
-		faca{
-			se(a%cont==0){
-				contDiv++
-			}
-			cont++
-		}enquanto(a>=cont)
-
-		se(contDiv>2){
-			conferePrimo=falso
+		se(num>0){
+			positivo=verdadeiro
 		}
 		senao{
-			conferePrimo=verdadeiro
+			positivo=falso
 		}
-		
-		retorne conferePrimo
+
+		escreva(positivo)
+
+		retorne positivo
 	}
 }
 /* $$$ Portugol Studio $$$ 
@@ -40,9 +29,9 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 145; 
+ * @POSICAO-CURSOR = 266; 
  * @PONTOS-DE-PARADA = ;
- * @SIMBOLOS-INSPECIONADOS = {conferePrimo, 16, 9, 12}-{contDiv, 17, 10, 7};
+ * @SIMBOLOS-INSPECIONADOS = {positivo, 11, 9, 8};
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
  * @FILTRO-ARVORE-TIPOS-DE-SIMBOLO = variavel, vetor, matriz, funcao;
  */

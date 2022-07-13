@@ -2,47 +2,37 @@ programa
 {
 	
 	funcao inicio()
-	{	
+	{
+		verificaParImpar()
+	}
+
+	funcao logico verificaParImpar(){
 		inteiro num
-		logico result
+		logico par
 		escreva("Digite um valor: ")
 		leia(num)
-		primo(num)
-		
-		result=primo(num)
-		
-		escreva(result)
-	}
 
-	funcao logico primo (inteiro a){
-		logico conferePrimo=falso
-		inteiro contDiv=0, cont=1
-
-		faca{
-			se(a%cont==0){
-				contDiv++
-			}
-			cont++
-		}enquanto(a>=cont)
-
-		se(contDiv>2){
-			conferePrimo=falso
+		se(num%2==0){
+			par=verdadeiro
 		}
 		senao{
-			conferePrimo=verdadeiro
+			par=falso
 		}
-		
-		retorne conferePrimo
+
+		escreva(par)
+
+		retorne par
 	}
 }
+
 /* $$$ Portugol Studio $$$ 
  * 
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 145; 
+ * @POSICAO-CURSOR = 258; 
  * @PONTOS-DE-PARADA = ;
- * @SIMBOLOS-INSPECIONADOS = {conferePrimo, 16, 9, 12}-{contDiv, 17, 10, 7};
+ * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
  * @FILTRO-ARVORE-TIPOS-DE-SIMBOLO = variavel, vetor, matriz, funcao;
  */
